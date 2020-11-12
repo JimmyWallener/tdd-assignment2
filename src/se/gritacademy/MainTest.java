@@ -54,9 +54,10 @@ private final PrintStream defaultOut = System.out;
     @Test
     public void testStringLength(){
         System.setOut(new PrintStream(content));
-
         System.out.println("Junit 5");
-        assertEquals(9, content.toString().length());
+
+        // Checks string length - 2 which accounts for "", since content shows all outgoing chars.
+        assertEquals(7, content.toString().length() -2,"String length do not match");
     }
 
     //Uppgift 5

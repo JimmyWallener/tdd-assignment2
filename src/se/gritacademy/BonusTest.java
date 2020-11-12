@@ -46,14 +46,16 @@ public class BonusTest {
     @DisplayName("Test if first & last letter match")
     @Test
     public void testNamesCompareChar(){
+        String firstName = user.getFirstName();
+        String lastName = user.getLastName();
 
         assertAll("first name",
-                () -> assertNotNull(user.getFirstName(),"Firstname returned null\n"),
-                () -> assertTrue(user.getFirstName().startsWith("J")),
-                () -> assertTrue(user.getFirstName().endsWith("y")));
+                () -> assertNotNull(firstName,"Firstname returned null\n"),
+                () -> assertTrue(firstName.startsWith("J")),
+                () -> assertTrue(firstName.endsWith("y")));
         assertAll("surname",
-                () -> assertNotNull(user.getLastName(), "Lastname returned null\n"),
-                () -> assertTrue(user.getLastName().startsWith("W")),
-                () -> assertTrue(user.getLastName().endsWith("r")));
+                () -> assertNotNull(lastName, "Lastname returned null\n"),
+                () -> assertTrue(lastName.startsWith("W")),
+                () -> assertTrue(lastName.endsWith("r")));
     }
 }
